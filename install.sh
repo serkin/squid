@@ -1,3 +1,5 @@
+SQUID_PORT="${1:-3128}"
+
 sudo apt update
 sudo apt install -y docker.io
 
@@ -43,7 +45,7 @@ sudo chmod 0777 $SQUID_CACHE_DIR
 
 
 docker run --name squid -d --restart=always \
-  --publish 3111:3128 \
+  --publish $SQUID_PORT:3128 \
   --volume $SQUID_CONF_FILE:/etc/squid/squid.conf \
   --volume $SQUID_CACHE_DIR:/var/spool/squid \
   sameersbn/squid:3.5.27-2
