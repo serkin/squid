@@ -16,3 +16,12 @@ export https_proxy=http://$IP:3111
 
 curl ipinfo.io/ip
 ``````
+
+
+## Tinyproxy
+docker run -d --name='tinyproxy' -p 6666:8888 monokal/tinyproxy:latest ANY
+
+- https://hub.docker.com/r/ajoergensen/tinyproxy
+- https://hub.docker.com/r/kalaksi/tinyproxy
+- https://github.com/kalaksi/docker-tinyproxy
+
